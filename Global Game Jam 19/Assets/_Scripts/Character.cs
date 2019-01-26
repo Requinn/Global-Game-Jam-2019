@@ -11,6 +11,7 @@ public class Character : MonoBehaviour, IDamageable
 {
     private const int JUMP_COUNT_MAX = 3;
     private CharacterMotor _motor;
+    public CharacterMotor Motor { get { return _motor; } }
     private HealthManager _healthManager;
 
     public event Damage.DamageEventMutator MutateDamage;
