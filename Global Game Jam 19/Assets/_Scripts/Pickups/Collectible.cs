@@ -1,18 +1,16 @@
-﻿using System.Collections;
+﻿using MichaelWolfGames.Examples;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MichaelWolfGames.DamageSystem;
+using System;
 
-public class Collectible : MonoBehaviour
+/// <summary>
+/// Generic Collectable Object
+/// </summary>
+public class Collectible : PickupBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    protected override void DoOnPickedUp(HealthManagerBase healthManager) {
+        Debug.Log("collectable acquired");
     }
 }
