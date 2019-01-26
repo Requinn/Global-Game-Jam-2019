@@ -26,14 +26,14 @@ public class Spring : MonoBehaviour
     {
         arb2d.velocity = new Vector2(arb2d.velocity.x, 0);
         arb2d.AddForce(new Vector2(0, launch), ForceMode2D.Force);
-        Debug.Log("Launched.");
+        //Debug.Log("Launched.");
         springJuice = StartCoroutine(ISpringJuice());
         
     }
 
     IEnumerator ISpringJuice()
     {
-        Debug.Log("Started.");
+        //Debug.Log("Started.");
         springAnimator.SetTrigger(springHash);
         yield return null;
         springJuice = null;
