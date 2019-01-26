@@ -35,7 +35,7 @@ public class Character : MonoBehaviour, IDamageable
     {
         //handle inputs here
         _motor.Move(Input.GetAxis("Horizontal"));
-        if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
+        if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
             _motor.Jump();
             ApplyDamage(this, 1f, transform.position);
         }
