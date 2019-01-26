@@ -25,8 +25,18 @@ public class Spring : MonoBehaviour
     private void Launch(Rigidbody2D arb2d)
     {
         arb2d.velocity = new Vector2(arb2d.velocity.x, 0);
-        Debug.Log(gameObject.transform.up * launch);
-        arb2d.AddForce(gameObject.transform.up * launch , ForceMode2D.Force);
+        if (arb2d.gameObject.CompareTag("Player"))
+        {
+
+            arb2d.gameObject.GetComponent<CharacterMotor>()
+                .ApplyForce(transform.up, launch*2);
+            
+        }
+        else
+        {
+            arb2d.AddForce(transform.up * launch, ForceMode2D.Impulse);
+        }
+
         //Debug.Log("Launched.");
         springJuice = StartCoroutine(ISpringJuice());
         

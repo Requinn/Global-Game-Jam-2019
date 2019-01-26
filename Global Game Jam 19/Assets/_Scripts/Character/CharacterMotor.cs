@@ -49,7 +49,7 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     /// <param name="force"></param>
     public void ApplyForce(Vector2 direction, float force) {
-        Vector2 appliedForce = direction.normalized * force;
+        Vector2 appliedForce = direction * force;
         if (force > 0) {
             _rigidbody.AddForce(appliedForce, ForceMode2D.Impulse);
         }
