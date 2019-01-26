@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 1544684476}
   - component: {fileID: 1544684471}
   - component: {fileID: 1544684474}
+  - component: {fileID: 1544684472}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -362,12 +363,30 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1544684472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544684470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4405c16d705f3a48b1e04dda48daacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faction: 1
+  maxHealth: 3
+  currentHealth: 3
+  _useInvulnerability: 1
+  _invulnTime: 0.25
+  _isInvulnerable: 0
 --- !u!4 &1544684473
 Transform:
   m_ObjectHideFlags: 0
@@ -412,9 +431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce986686a10af448bcb55de69c8e4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 5
+  _jumpForce: 7.5
   _movementSpeed: 5
   _feetPosition: {fileID: 1243545568}
+  _moveDamping: 0.001
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256

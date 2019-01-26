@@ -13,8 +13,10 @@ public class CharacterMotor : MonoBehaviour
     private Transform _feetPosition;
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
-    private float _moveSmoothing = 0.05f;
+    [SerializeField]
+    private float _moveDamping = 0.001f;
     private Vector3 _velocity = Vector3.zero;
+    private bool _canMove = true;
 
     [SerializeField]
     private LayerMask _groundLayer;
@@ -36,18 +38,29 @@ public class CharacterMotor : MonoBehaviour
     }
 
     /// <summary>
-    /// Make the player jump up with force
+    /// Sets the movement state
+    /// </summary>
+    public void SetMovement(bool canMove) {
+        _canMove = canMove;
+    }
+
+    /// <summary>
+    /// Apply a force to the player in the direction
     /// </summary>
     /// <param name="force"></param>
-    public void Jump(float force = 0) {
-        if (!_isGrounded && force == 0) { return; }
-        _isGrounded = false;
+    public void ApplyForce(Vector2 direction, float force) {
+        Vector2 appliedForce = direction.normalized * force;
         if (force > 0) {
-            _rigidbody.AddForce(new Vector2(0f, force), ForceMode2D.Impulse);
+            _rigidbody.AddForce(appliedForce, ForceMode2D.Impulse);
         }
-        else {
-            _rigidbody.AddForce(new Vector2(0f, _jumpForce), ForceMode2D.Impulse);
-        }
+    }
+
+    /// <summary>
+    /// Do a Jump
+    /// </summary>
+    public void Jump() {
+        if (!_isGrounded || !_canMove) { return; }
+        ApplyForce(transform.up, _jumpForce);
     }
 
     /// <summary>
@@ -55,8 +68,9 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     /// <param name="force"></param>
     public void Move(float force) {
+        if (!_canMove) { return; }
         Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
-        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveSmoothing);
+        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveDamping);
     }
 
     RaycastHit2D _hit;
