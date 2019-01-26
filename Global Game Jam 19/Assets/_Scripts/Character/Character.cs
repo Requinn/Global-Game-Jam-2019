@@ -13,6 +13,7 @@ public class Character : MonoBehaviour, IDamageable
     private CharacterMotor _motor;
     public CharacterMotor Motor { get { return _motor; } }
     private HealthManager _healthManager;
+    private Animator _animator;
 
     public event Damage.DamageEventMutator MutateDamage;
     public event Damage.DamageEventHandler OnTakeDamage;
@@ -22,6 +23,8 @@ public class Character : MonoBehaviour, IDamageable
     {
         _motor = GetComponent<CharacterMotor>();
         _healthManager = GetComponent<HealthManager>();
+        _animator = GetComponent<Animator>();
+
         _healthManager.OnDeath += HandleDeath;
         _healthManager.SetHealth(JUMP_COUNT_MAX);
 
@@ -32,7 +35,7 @@ public class Character : MonoBehaviour, IDamageable
     {
         //handle inputs here
         _motor.Move(Input.GetAxis("Horizontal"));
-        if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
+        if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
             _motor.Jump();
             ApplyDamage(this, 1f, transform.position);
         }

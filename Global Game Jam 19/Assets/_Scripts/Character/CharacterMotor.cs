@@ -68,7 +68,6 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     /// <param name="force"></param>
     public void Move(float force) {
-        if (!_canMove) { return; }
         Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
         _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveDamping);
     }
