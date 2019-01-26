@@ -14,7 +14,7 @@ public class CharacterMotor : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
     [SerializeField]
-    private float _moveDamping = 0.001f;
+    private float _moveDamping = 0.001f, _movementForce = 0f;
     private Vector3 _velocity = Vector3.zero;
     private bool _canMove = true;
 
@@ -42,6 +42,10 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     public void SetMovement(bool canMove) {
         _canMove = canMove;
+    }
+
+    public float GetSpeed() {
+        return _rigidbody.velocity.magnitude;
     }
 
     /// <summary>

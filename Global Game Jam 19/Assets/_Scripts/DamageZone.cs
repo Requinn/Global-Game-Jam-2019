@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using MichaelWolfGames.DamageSystem;
 using UnityEngine;
 
 public class DamageZone : MonoBehaviour
 {
     public int damage = 1;
 
-    public void OnTriggerStay(Collider c) {
+    public void OnTriggerStay2D(Collider2D c) {
         if (c.CompareTag("Player")) {
-            c.GetComponent<Character>().ApplyDamage(this, damage, c.transform.position);
+            c.GetComponent<Character>().Reset();
         }
     }
 }
