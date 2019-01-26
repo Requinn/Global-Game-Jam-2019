@@ -14,6 +14,7 @@ public class Character : MonoBehaviour, IDamageable
     public CharacterMotor Motor { get { return _motor; } }
     private HealthManager _healthManager;
     private Animator _animator;
+    private GameObject _spriteObject;
 
     public event Damage.DamageEventMutator MutateDamage;
     public event Damage.DamageEventHandler OnTakeDamage;
@@ -23,7 +24,8 @@ public class Character : MonoBehaviour, IDamageable
     {
         _motor = GetComponent<CharacterMotor>();
         _healthManager = GetComponent<HealthManager>();
-        _animator = GetComponent<Animator>();
+        _spriteObject = transform.GetChild(0).gameObject;
+        _animator = _spriteObject.GetComponent<Animator>();
 
         _healthManager.OnDeath += HandleDeath;
         _healthManager.SetHealth(JUMP_COUNT_MAX);
@@ -34,11 +36,17 @@ public class Character : MonoBehaviour, IDamageable
     void Update()
     {
         //handle inputs here
-        _motor.Move(Input.GetAxis("Horizontal"));
+        float movementForce = Input.GetAxis("Horizontal");
+        if (movementForce != 0) {
+            _motor.Move(movementForce);
+        }
         if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
             _motor.Jump();
             ApplyDamage(this, 1f, transform.position);
         }
+        FlipPlayer(movementForce);
+        _animator.SetBool("Ground", _motor.IsGrounded);
+        _animator.SetFloat("Speed", Mathf.Abs(movementForce));
     }
 
     /// <summary>
@@ -72,4 +80,21 @@ public class Character : MonoBehaviour, IDamageable
         Debug.Log("We Died");
     }
 
+    public void Reset() {
+        //send player back to checkpoint
+    }
+
+    private Quaternion _rightRotation = Quaternion.Euler(Vector3.zero), _leftRotation = Quaternion.Euler(new Vector3(0, 180f, 0));
+    /// <summary>
+    /// flips player sprite based on direction
+    /// </summary>
+    /// <param name="direction"></param>
+    private void FlipPlayer(float direction) {
+        if(direction > 0) {
+            _spriteObject.transform.rotation = _rightRotation;
+        }
+        else if(direction < 0) {
+            _spriteObject.transform.rotation = _leftRotation;
+        }
+    }
 }
