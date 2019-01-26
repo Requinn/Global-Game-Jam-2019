@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Inidividual checkpoint object
+/// </summary>
 public class CheckPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public Vector3 position;
+    private int _index = 0;
+    public delegate void CheckPointAcquiredEvent(int index);
+    public CheckPointAcquiredEvent OnChecked;
+
+    void Start() {
+        position = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SetIndex(int newIndex) {
+        _index = newIndex;
+    }
+
+    void OnTriggerEnter2D(Collider2D c) {
+        OnChecked(_index);
     }
 }
