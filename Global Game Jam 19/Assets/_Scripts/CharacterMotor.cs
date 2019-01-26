@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Prime31;
+
 /// <summary>
 /// Movement for the character
 /// </summary>
@@ -9,38 +9,30 @@ public class CharacterMotor : MonoBehaviour
 {
     [SerializeField]
     private float _jumpForce, _movementSpeed;
-    private CharacterController2D _controller;
+    [SerializeField]
+    private Transform _feetPosition;
+    private Rigidbody2D _rigidbody;
     private Collider2D _collider;
-    private float _gravityForce = -9.81f;
-    public Vector3 _movement;
+    private float _moveSmoothing = 0.05f;
+    private Vector3 _velocity = Vector3.zero;
 
+    [SerializeField]
+    private LayerMask _groundLayer;
     private float _centerHeightAdjust = 0f;
-    private bool _isGrounded = false;
+    [SerializeField]
+    private bool _isGrounded = true;
     public bool IsGrounded { get { return _isGrounded; } }
 
     // Start is called before the first frame update
     void Start()
     {
-        _controller = GetComponent<CharacterController2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _centerHeightAdjust = _collider.bounds.extents.y + 0.075f;
     }
 
-    void Update() {
+    void FixedUpdate() {
         CheckGrounded();
-    }
-
-    void FixedUpate() {
-        //gravity in air
-        if (!_isGrounded) {
-            _movement.y += _gravityForce * Time.deltaTime;
-        }
-        //small downforce while on the ground
-        else {
-            _movement.y = -.05f / Time.deltaTime;
-        }
-        //apply the movement
-        _controller.move(_movement * Time.deltaTime);
     }
 
     /// <summary>
@@ -48,12 +40,13 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     /// <param name="force"></param>
     public void Jump(float force = 0) {
-        _movement.y = 0;
-        if (force == 0) {
-            _movement.y += _jumpForce;
+        if (!_isGrounded && force == 0) { return; }
+        _isGrounded = false;
+        if (force > 0) {
+            _rigidbody.AddForce(new Vector2(0f, force), ForceMode2D.Impulse);
         }
         else {
-            _movement.y += force;
+            _rigidbody.AddForce(new Vector2(0f, _jumpForce), ForceMode2D.Impulse);
         }
     }
 
@@ -62,11 +55,22 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     /// <param name="force"></param>
     public void Move(float force) {
-        _movement.x += force * _movementSpeed;
+        Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
+        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveSmoothing);
     }
 
     RaycastHit2D _hit;
+    /// <summary>
+    /// Check for ground detection
+    /// </summary>
     private void CheckGrounded() {
-        _hit = Physics2D.Raycast(transform.position, Vector2.down, _centerHeightAdjust, LayerMask.NameToLayer("Ground"));
+        bool wasGrounded = _isGrounded;
+        _isGrounded = false;
+        _hit = Physics2D.Raycast(transform.position, Vector2.down, _centerHeightAdjust, _groundLayer);
+        Debug.DrawLine(transform.position, transform.position + new Vector3(Vector2.down.x * _centerHeightAdjust, Vector2.down.y * _centerHeightAdjust), Color.red);
+        if(_hit) {
+            _isGrounded = true;
+        }
     }
+
 }
