@@ -5,6 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# Jetbrain Rider Cache
+.idea/
+Assets/Plugins/Editor/JetBrains*
 # Visual Studio cache directory
 .vs/
 
@@ -34,3 +37,17 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/encodings.xml
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/indexLayout.xml
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/misc.xml
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/vcs.xml
+Global Game Jam 19/Assets/Plugins/Editor/JetBrains.meta
+Global Game Jam 19/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta
+Global Game Jam 19/ProjectSettings/EditorBuildSettings.asset
+Global Game Jam 19/ProjectSettings/EditorSettings.asset
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/encodings.xml
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/indexLayout.xml
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/misc.xml
+Global Game Jam 19/.idea/.idea.Global Game Jam 19/.idea/vcs.xml
+Global Game Jam 19/ProjectSettings/EditorBuildSettings.asset
+Global Game Jam 19/ProjectSettings/EditorSettings.asset
