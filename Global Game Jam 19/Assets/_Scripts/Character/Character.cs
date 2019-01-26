@@ -80,8 +80,13 @@ public class Character : MonoBehaviour, IDamageable
         Debug.Log("We Died");
     }
 
+    /// <summary>
+    /// Stop all movement on the player and go back to the last checkpoint stepped on
+    /// </summary>
     public void Reset() {
-        //send player back to checkpoint
+        _healthManager.AddHealth(JUMP_COUNT_MAX);
+        _motor.StopAllMovement();
+        transform.position = CheckpointHandler.Instance.GetCurrentCheckpointPosition();
     }
 
     private Quaternion _rightRotation = Quaternion.Euler(Vector3.zero), _leftRotation = Quaternion.Euler(new Vector3(0, 180f, 0));

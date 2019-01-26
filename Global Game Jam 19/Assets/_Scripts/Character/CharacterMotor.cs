@@ -44,8 +44,8 @@ public class CharacterMotor : MonoBehaviour
         _canMove = canMove;
     }
 
-    public float GetSpeed() {
-        return _rigidbody.velocity.magnitude;
+    public void StopAllMovement() {
+        _rigidbody.velocity = Vector3.zero;
     }
 
     /// <summary>

@@ -52,6 +52,7 @@ MonoBehaviour:
   _movementSpeed: 5
   _feetPosition: {fileID: 0}
   _moveDamping: 0.001
+  _movementForce: 0
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -120,8 +121,8 @@ MonoBehaviour:
   Faction: 1
   maxHealth: 3
   currentHealth: 3
-  _useInvulnerability: 1
-  _invulnTime: 0.25
+  _useInvulnerability: 0
+  _invulnTime: 1
   _isInvulnerable: 0
 --- !u!1 &4852407597838786212
 GameObject:
@@ -133,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4852407597838786213}
   - component: {fileID: 4852407597838786210}
+  - component: {fileID: 104215591}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -202,3 +204,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &104215591
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852407597838786212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5fc43f0c4b413534ba12c51c0e5e5f6f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
