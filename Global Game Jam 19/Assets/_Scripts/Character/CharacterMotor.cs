@@ -80,7 +80,7 @@ public class CharacterMotor : MonoBehaviour
         if(!_canMove) { return false; }
         RaycastHit2D midAirWallCheck;
         //mid air wall check
-        midAirWallCheck = Physics2D.Raycast(transform.position, (transform.right * force).normalized, _collider.bounds.extents.x + .075f, 1 << 8);
+        midAirWallCheck = Physics2D.BoxCast(transform.position, _collider.bounds.size, 0, (transform.right * force).normalized, _collider.bounds.extents.x + .075f, 1 << 8);
         if(!_isGrounded && midAirWallCheck) {
             return false;
         }

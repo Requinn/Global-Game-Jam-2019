@@ -73,6 +73,6 @@ public class SceneFader : MonoBehaviour {
         if (alphaValue == 0f) {
             _fadeCanvas.gameObject.SetActive(false);
         }
-        onFadeComplete();
+        if(onFadeComplete != null) onFadeComplete();
     }
 }
