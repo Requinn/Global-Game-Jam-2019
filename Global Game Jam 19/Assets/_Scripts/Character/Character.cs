@@ -37,13 +37,14 @@ public class Character : MonoBehaviour, IDamageable
 
     }
 
+    bool didMove = false;
     // Update is called once per frame
     void Update()
     {
         //handle inputs here
         float movementForce = Input.GetAxis("Horizontal");
         if (movementForce != 0) {
-            _motor.Move(movementForce);
+            didMove = _motor.DoMove(movementForce);
         }
         if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
             bool didJump = _motor.DoJump();
@@ -56,7 +57,8 @@ public class Character : MonoBehaviour, IDamageable
         }
         FlipPlayer(movementForce);
         _animator.SetBool("Ground", _motor.IsGrounded);
-        _animator.SetFloat("Speed", Mathf.Abs(movementForce));
+        if(didMove) _animator.SetFloat("Speed", Mathf.Abs(movementForce));
+        else _animator.SetFloat("Speed", Mathf.Abs(0));
     }
 
     /// <summary>
@@ -109,12 +111,22 @@ public class Character : MonoBehaviour, IDamageable
     /// Stop all movement on the player and go back to the last checkpoint stepped on
     /// </summary>
     public void Reset() {
-        _healthManager.Revive();
-        _motor.SetJump(true);
         _motor.StopAllMovement();
-        transform.position = CheckpointHandler.Instance.GetCurrentCheckpointPosition();
+        _motor.SetMovement(false);
+        _motor.SetJump(false);
+        SceneFader.Instance.FadeIn(SceneFadeOutAction);
     }
 
+    private void SceneFadeOutAction() {
+        transform.position = CheckpointHandler.Instance.GetCurrentCheckpointPosition();
+        SceneFader.Instance.FadeOut(DoResetSequence);
+    }
+
+    private void DoResetSequence() {
+        _healthManager.Revive();
+        _motor.SetJump(true);
+        _motor.SetMovement(true);
+    }
     private Quaternion _rightRotation = Quaternion.Euler(Vector3.zero), _leftRotation = Quaternion.Euler(new Vector3(0, 180f, 0));
     /// <summary>
     /// flips player sprite based on direction

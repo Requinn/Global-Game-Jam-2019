@@ -744,12 +744,12 @@ GameObject:
   - component: {fileID: 1196643032}
   - component: {fileID: 1196643031}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: SceneFadeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1196643029
 RectTransform:
   m_ObjectHideFlags: 0
