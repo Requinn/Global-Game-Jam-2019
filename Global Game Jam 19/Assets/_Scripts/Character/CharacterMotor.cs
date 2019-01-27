@@ -5,8 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Movement for the character
 /// </summary>
-public class CharacterMotor : MonoBehaviour
-{
+public class CharacterMotor : MonoBehaviour {
     [SerializeField]
     private float _jumpForce, _movementSpeed;
     [SerializeField]
@@ -26,8 +25,7 @@ public class CharacterMotor : MonoBehaviour
     public bool IsGrounded { get { return _isGrounded; } }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _centerHeightAdjust = _collider.bounds.extents.y + 0.075f;
@@ -44,7 +42,7 @@ public class CharacterMotor : MonoBehaviour
         _canMove = canMove;
     }
 
-    public void SetJump (bool canJump) {
+    public void SetJump(bool canJump) {
         _canJump = canJump;
     }
 
@@ -77,16 +75,24 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     /// <param name="force"></param>
     public bool DoMove(float force) {
-        if(!_canMove) { return false; }
+        bool success = false;
+        if (!_canMove) { return false; }
         RaycastHit2D midAirWallCheck;
         //mid air wall check
-        midAirWallCheck = Physics2D.BoxCast(transform.position, _collider.bounds.size, 0, (transform.right * force).normalized, _collider.bounds.extents.x + .075f, 1 << 8);
-        if(!_isGrounded && midAirWallCheck) {
-            return false;
+        midAirWallCheck = Physics2D.BoxCast(transform.position, _collider.bounds.size, 0, (transform.right * force).normalized, _collider.bounds.extents.x + _rigidbody.velocity.x * Time.fixedDeltaTime, 1 << 8);
+        Vector2 wallNormal = midAirWallCheck.normal;
+        if (wallNormal == Vector2.right || wallNormal == Vector2.left) {
+            //we hit a 90 degree wall surface
+            success = false;
+            force = 0;
+        }
+        if (!_isGrounded && midAirWallCheck) {
+            //return false;
         }
         Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
         _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveDamping);
-        return true;
+        success = true;
+        return success;
     }
 
     RaycastHit2D _hit;
