@@ -5,7 +5,7 @@ public class DamageZone : MonoBehaviour
 {
     public int damage = 1;
 
-    public void OnTriggerStay2D(Collider2D c) {
+    public void OnTriggerEnter2D(Collider2D c) {
         if (c.CompareTag("Player")) {
             c.GetComponent<Character>().Reset();
         }

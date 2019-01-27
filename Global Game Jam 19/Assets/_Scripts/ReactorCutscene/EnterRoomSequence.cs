@@ -13,14 +13,15 @@ public class EnterRoomSequence : SequenceObject
     public Transform _inspectReactorNode;
 
     public override IEnumerator DoSequenceAction() {
-        //stop the player
-        _affectingPlayer.CanDoInputs = false;
         //zoom camera in
         _reactorRoomCamera.Priority = 50;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
         //move player over with external input
-        while(_affectingPlayer.transform.position != _inspectReactorNode.position) {
-            _affectingPlayer.DoMovements(1, false);
+        float time = 0;
+
+        while(time < 1.3f) {
+            time += Time.deltaTime;
+            _affectingPlayer.DoMovements(0.5f, false);
             yield return null;
         }
         yield return null;

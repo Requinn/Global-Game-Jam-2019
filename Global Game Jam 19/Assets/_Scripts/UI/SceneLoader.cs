@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     int sceneIndexToLoad;
-    public void LoadScene(int index)
+    public void LoadScene(int index, bool useFader = true)
     {
         sceneIndexToLoad = index;
-        SceneFader.Instance.FadeIn(DoSceneChange);
+        if(useFader) SceneFader.Instance.FadeIn(DoSceneChange);
+        else { DoSceneChange(); }
     }
 
     private void DoSceneChange() {
         SceneManager.LoadScene(sceneIndexToLoad);
     }
-
 }

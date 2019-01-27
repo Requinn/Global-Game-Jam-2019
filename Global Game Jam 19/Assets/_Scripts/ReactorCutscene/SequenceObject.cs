@@ -16,6 +16,7 @@ public class SequenceObject : MonoBehaviour
     public float StartTime => _startDelay;
     public float EndTime => _endDelay;
     [Header("Step specific properties")]
+    [SerializeField]
     protected Character _affectingPlayer; 
 
     public virtual IEnumerator DoSequenceAction() {

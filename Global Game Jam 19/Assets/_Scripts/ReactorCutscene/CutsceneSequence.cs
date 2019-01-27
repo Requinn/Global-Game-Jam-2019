@@ -26,4 +26,13 @@ public class CutsceneSequence : MonoBehaviour
         }
         yield return null;
     }
+
+    void OnTriggerEnter2D(Collider2D c) {
+        if (c.CompareTag("Player")) {
+            c.GetComponent<CharacterMotor>().StopAllMovement();
+            c.GetComponent<Character>().CanDoInputs = false;
+            GetComponent<Collider2D>().enabled = false;
+            StartSequence();
+        }
+    }
 }
