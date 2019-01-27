@@ -31,7 +31,7 @@ public class Character : MonoBehaviour, IDamageable
         _animator = _spriteObject.GetComponent<Animator>();
 
         _healthManager.OnDeath += HandleDeath;
-        _healthManager.OnRevive += HandleRevive;
+        _healthManager.OnHealHealth += HandleHeal;
 
         _healthManager.SetHealth(JUMP_COUNT_MAX);
 
@@ -46,8 +46,13 @@ public class Character : MonoBehaviour, IDamageable
             _motor.Move(movementForce);
         }
         if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
-            _motor.Jump();
-            if(!_isTestingMode) ApplyDamage(this, 1f, transform.position);
+            bool didJump = _motor.DoJump();
+            if (!_isTestingMode && didJump) {
+                ApplyDamage(this, 1f, transform.position);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Reset();
         }
         FlipPlayer(movementForce);
         _animator.SetBool("Ground", _motor.IsGrounded);
@@ -84,20 +89,11 @@ public class Character : MonoBehaviour, IDamageable
         _motor.SetJump(false);
     }
 
-    private void HandleRevive() {
-        _motor.SetJump(true);
-    }
-
     /// <summary>
     /// Do stuff when we revive
     /// </summary>
-    private void HandleHealthUpdate(float h) {
-        Debug.Log(h);
-        if(_healthManager.CurrentHealth == 0) {
-            _healthManager.Revive();
-            _healthManager.SetHealth(1);
-            _motor.SetJump(true);
-        }
+    private void HandleHeal(float h) {
+        _motor.SetJump(true);
     }
     /// <summary>
     /// Check when we pick up health to re-enable the jump
@@ -114,6 +110,7 @@ public class Character : MonoBehaviour, IDamageable
     /// </summary>
     public void Reset() {
         _healthManager.Revive();
+        _motor.SetJump(true);
         _motor.StopAllMovement();
         transform.position = CheckpointHandler.Instance.GetCurrentCheckpointPosition();
     }

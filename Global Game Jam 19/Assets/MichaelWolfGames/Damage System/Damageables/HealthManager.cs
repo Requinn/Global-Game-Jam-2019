@@ -31,9 +31,13 @@ namespace MichaelWolfGames.DamageSystem
 	    }
         
         protected override void HandleRevive() {
-            CurrentHealth = 1;
-            IsDead = false;
+            CurrentHealth = 3;
             OnRevive();
+        }
+
+        protected override void HandleDeath() {
+            CurrentHealth = 0;
+            OnDeath();
         }
 
         protected virtual IEnumerator CoInvulnerabilityDelay(float delay)
