@@ -14,18 +14,17 @@ namespace MichaelWolfGames.Examples
         public float HealthValue = 25f;
         protected override void DoOnPickedUp(HealthManagerBase healthManager)
         {
-            healthManager.AddHealth(HealthValue);
+            if (healthManager.IsDead) {
+                healthManager.Revive();
+            }
+            else {
+                healthManager.AddHealth(HealthValue);
+            }
         }
 
         protected override bool CheckPickUpConditions(HealthManagerBase healthManager)
         {
-            if (healthManager.IsDead) return false;
-            if (healthManager.PercentValue >= 1f)
-            {
-                return false;
-            }
-
-            return base.CheckPickUpConditions(healthManager);
+            return true;
         }
     }
 }
