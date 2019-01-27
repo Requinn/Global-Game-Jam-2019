@@ -66,9 +66,10 @@ public class CharacterMotor : MonoBehaviour
     /// <summary>
     /// Do a Jump
     /// </summary>
-    public void Jump() {
-        if (!_isGrounded || !_canJump) { return; }
+    public bool DoJump() {
+        if (!_isGrounded || !_canJump) { return false; }
         ApplyForce(transform.up, _jumpForce);
+        return true;
     }
 
     /// <summary>
@@ -77,7 +78,10 @@ public class CharacterMotor : MonoBehaviour
     /// <param name="force"></param>
     public void Move(float force) {
         if(!_canMove) { return; }
-        if(force != 0 && _rigidbody.velocity.x == 0 && !_isGrounded) {
+        RaycastHit2D midAirWallCheck;
+        //mid air wall check
+        midAirWallCheck = Physics2D.Raycast(transform.position, (transform.right * force).normalized, _collider.bounds.extents.x + .075f, 1 << 8);
+        if(!_isGrounded && midAirWallCheck) {
             return;
         }
         Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
