@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 1995682014692052466, guid: f378a72e358096448a93bc64995a5f88,
         type: 3}
       propertyPath: m_Name
-      value: Purple Battery
+      value: fullchargeBatt
       objectReference: {fileID: 0}
     - target: {fileID: 1995682014692052464, guid: f378a72e358096448a93bc64995a5f88,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.651062
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1995682014692052464, guid: f378a72e358096448a93bc64995a5f88,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.869154
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1995682014692052464, guid: f378a72e358096448a93bc64995a5f88,
         type: 3}
