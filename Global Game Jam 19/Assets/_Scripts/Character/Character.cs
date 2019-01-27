@@ -16,6 +16,9 @@ public class Character : MonoBehaviour, IDamageable
     private Animator _animator;
     private GameObject _spriteObject;
 
+    [SerializeField]
+    private bool _isTestingMode = false;
+
     public event Damage.DamageEventMutator MutateDamage;
     public event Damage.DamageEventHandler OnTakeDamage;
 
@@ -28,6 +31,8 @@ public class Character : MonoBehaviour, IDamageable
         _animator = _spriteObject.GetComponent<Animator>();
 
         _healthManager.OnDeath += HandleDeath;
+        _healthManager.OnRevive += HandleRevive;
+
         _healthManager.SetHealth(JUMP_COUNT_MAX);
 
     }
@@ -42,7 +47,7 @@ public class Character : MonoBehaviour, IDamageable
         }
         if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
             _motor.Jump();
-            ApplyDamage(this, 1f, transform.position);
+            if(!_isTestingMode) ApplyDamage(this, 1f, transform.position);
         }
         FlipPlayer(movementForce);
         _animator.SetBool("Ground", _motor.IsGrounded);
@@ -76,15 +81,39 @@ public class Character : MonoBehaviour, IDamageable
     /// Do stuff on death
     /// </summary>
     private void HandleDeath() {
-        _motor.SetMovement(false);
-        Debug.Log("We Died");
+        _motor.SetJump(false);
     }
 
+    private void HandleRevive() {
+        _motor.SetJump(true);
+    }
+
+    /// <summary>
+    /// Do stuff when we revive
+    /// </summary>
+    private void HandleHealthUpdate(float h) {
+        Debug.Log(h);
+        if(_healthManager.CurrentHealth == 0) {
+            _healthManager.Revive();
+            _healthManager.SetHealth(1);
+            _motor.SetJump(true);
+        }
+    }
+    /// <summary>
+    /// Check when we pick up health to re-enable the jump
+    /// </summary>
+    /// <param name="obj"></param>
+    private void CheckPositiveHealth(float obj) {
+        if (_healthManager.CurrentHealth > 0) {
+            //_healthManager.Revive();
+            _motor.SetJump(true);
+        }
+    }
     /// <summary>
     /// Stop all movement on the player and go back to the last checkpoint stepped on
     /// </summary>
     public void Reset() {
-        _healthManager.AddHealth(JUMP_COUNT_MAX);
+        _healthManager.Revive();
         _motor.StopAllMovement();
         transform.position = CheckpointHandler.Instance.GetCurrentCheckpointPosition();
     }
