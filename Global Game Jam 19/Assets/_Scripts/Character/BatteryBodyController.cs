@@ -7,6 +7,9 @@ using MichaelWolfGames;
 public class BatteryBodyController : SubscriberBase<HealthManager>
 {
     [SerializeField] private SpriteRenderer[] bodySprites;
+    [SerializeField] private SpriteRenderer smileFace;
+    [SerializeField] private SpriteRenderer sadFace;
+    [SerializeField] private SpriteRenderer surprisedFace;
 
     protected override void DoOnInitialize()
     {
@@ -31,6 +34,30 @@ public class BatteryBodyController : SubscriberBase<HealthManager>
         {
             bodySprites[i].enabled = (i == charge);
         }
+        if (charge <= 1)
+            SetFace_Sad();
+        else if (charge > 1)
+            SetFace_Smile();
     }
 
+
+    public void SetFace_Sad()
+    {
+        smileFace.enabled = false;
+        surprisedFace.enabled = false;
+        sadFace.enabled = true;
+    }
+
+    public void SetFace_Smile()
+    {
+        smileFace.enabled = true;
+        surprisedFace.enabled = false;
+        sadFace.enabled = false;
+    }
+    public void SetFace_Surprised()
+    {
+        smileFace.enabled = false;
+        surprisedFace.enabled = true;
+        sadFace.enabled = false;
+    }
 }
