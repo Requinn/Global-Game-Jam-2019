@@ -39,7 +39,7 @@ public class Character : MonoBehaviour, IDamageable
         _healthManager.OnHealHealth += HandleHeal;
         _healthManager.OnUpdateHealth += CheckPositiveHealth;
 
-        _healthManager.SetHealth(JUMP_COUNT_MAX);
+        //_healthManager.SetHealth(JUMP_COUNT_MAX);
 
     }
 
