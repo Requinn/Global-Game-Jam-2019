@@ -33,7 +33,7 @@ public class Spring : MonoBehaviour
         if (arb2d.gameObject.CompareTag("Player"))
         {
             CharacterMotor playerMotor = arb2d.gameObject.GetComponent<CharacterMotor>();
-            disablePlayer = StartCoroutine(IDisablePlayer(playerMotor));
+            disablePlayer = StartCoroutine(DisablePlayer(playerMotor));
             playerMotor.ApplyForce(transform.up, launch*2);
             
         }
@@ -43,11 +43,11 @@ public class Spring : MonoBehaviour
         }
 
         arb2d.AddForce(gameObject.transform.up * launch , ForceMode2D.Force);
-        springJuice = StartCoroutine(ISpringJuice());
+        springJuice = StartCoroutine(SpringJuice());
         
     }
 
-    IEnumerator ISpringJuice()
+    IEnumerator SpringJuice()
     {
         //Debug.Log("Started.");
         springAnimator.SetTrigger(springHash);
@@ -57,7 +57,7 @@ public class Spring : MonoBehaviour
         springJuice = null;
     }
 
-    IEnumerator IDisablePlayer(CharacterMotor pm)
+    IEnumerator DisablePlayer(CharacterMotor pm)
     {
         pm.SetMovement(false);
         pm.StopAllMovement();
