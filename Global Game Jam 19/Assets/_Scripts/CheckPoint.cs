@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MichaelWolfGames.DamageSystem;
 using UnityEngine;
 
 
@@ -21,7 +22,13 @@ public class CheckPoint : MonoBehaviour
         _index = newIndex;
     }
 
-    void OnTriggerEnter2D(Collider2D c) {
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        HealthManager h = c.GetComponent<HealthManager>();
+        if (h)
+        {
+            h.AddHealth(3);
+        }
         OnChecked(_index);
     }
 }

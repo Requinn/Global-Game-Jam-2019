@@ -8,7 +8,8 @@ public class CheckpointHandler : MonoBehaviour
 
     [SerializeField]
     private CheckPoint[] _checkpoints;
-    private int _currentCheckPoint = 0;
+    private int _currentCheckPoint = -1;
+    public int CurrentIndex => _currentCheckPoint;
 
     void Start() {
         Instance = this;
@@ -29,7 +30,8 @@ public class CheckpointHandler : MonoBehaviour
             _currentCheckPoint = index;
         }
     }
-
+    
+    
     /// <summary>
     /// get the position of the highest chckpoint 
     /// </summary>

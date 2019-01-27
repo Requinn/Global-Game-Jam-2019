@@ -26,13 +26,16 @@ public class CameraScreenHandler : MonoBehaviour
     /// Set new camera to have higher priority than the old camera.
     /// </summary>
     /// <param name="index"></param>
-    public void SetNewCamera(int nextCameraIndex) {
-        nextCameraIndex += 1;
-        if (nextCameraIndex < _screenCameras.Length) {
-            _screenTriggers[_currentCameraIndex].enabled = false;
-            _screenCameras[_currentCameraIndex].Priority = 0;
-            _screenCameras[nextCameraIndex].Priority = 50;
-            _currentCameraIndex = nextCameraIndex;
+    public void SetNewCamera(int nextCameraIndex)
+    {
+        if (_currentCameraIndex >= nextCameraIndex || nextCameraIndex == 0)
+        {
+            return;
         }
+        //_screenTriggers[_currentCameraIndex].GetComponent<Collider2D>().enabled = false;
+        _screenTriggers[_currentCameraIndex].SetWallActive();
+        _screenCameras[_currentCameraIndex].Priority = 0;
+        _screenCameras[nextCameraIndex].Priority = 50;
+        _currentCameraIndex = nextCameraIndex;
     }
 }
