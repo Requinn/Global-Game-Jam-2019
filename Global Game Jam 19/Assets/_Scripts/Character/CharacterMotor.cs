@@ -76,16 +76,17 @@ public class CharacterMotor : MonoBehaviour
     /// Move horizontally
     /// </summary>
     /// <param name="force"></param>
-    public void Move(float force) {
-        if(!_canMove) { return; }
+    public bool DoMove(float force) {
+        if(!_canMove) { return false; }
         RaycastHit2D midAirWallCheck;
         //mid air wall check
-        midAirWallCheck = Physics2D.Raycast(transform.position, (transform.right * force).normalized, _collider.bounds.extents.x + .075f, 1 << 8);
+        midAirWallCheck = Physics2D.BoxCast(transform.position, _collider.bounds.size, 0, (transform.right * force).normalized, _collider.bounds.extents.x + .075f, 1 << 8);
         if(!_isGrounded && midAirWallCheck) {
-            return;
+            return false;
         }
         Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
         _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveDamping);
+        return true;
     }
 
     RaycastHit2D _hit;
