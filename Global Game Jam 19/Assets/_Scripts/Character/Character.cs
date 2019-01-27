@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using MichaelWolfGames.Examples;
 
 /// <summary>
 /// Base character class
@@ -27,6 +28,9 @@ public class Character : MonoBehaviour, IDamageable
     public event Damage.DamageEventMutator MutateDamage;
     public event Damage.DamageEventHandler OnTakeDamage;
 
+    //crumch code
+    private HealthPickup[] _pickupObjects;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,7 @@ public class Character : MonoBehaviour, IDamageable
         _healthManager.OnHealHealth += HandleHeal;
         _healthManager.OnUpdateHealth += CheckPositiveHealth;
 
+        _pickupObjects = FindObjectsOfType<HealthPickup>();
         //_healthManager.SetHealth(JUMP_COUNT_MAX);
 
     }
@@ -154,6 +159,9 @@ public class Character : MonoBehaviour, IDamageable
     }
 
     private void DoResetSequence() {
+        foreach (HealthPickup h in _pickupObjects) {
+            h.gameObject.SetActive(true);
+        }
         _healthManager.Revive();
         _motor.SetJump(true);
         _motor.SetMovement(true);

@@ -35,6 +35,9 @@ namespace MichaelWolfGames.Examples
                 {
                     Destroy(this.gameObject);
                 }
+                else {
+                    gameObject.SetActive(false);
+                }
             }
         }
 
