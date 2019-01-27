@@ -8,8 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MainMenu.unity
     guid: 0fc20856dac625d46942a1f0a4b79955
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/588d85ac868d27e448542f87333e5b9b
+  - enabled: 1
+    path: Assets/_Scenes/Scene1_Home.unity
     guid: 588d85ac868d27e448542f87333e5b9b
   - enabled: 1
     path: Assets/_Scenes/Level2_FINALCOUNTDOWN.unity
