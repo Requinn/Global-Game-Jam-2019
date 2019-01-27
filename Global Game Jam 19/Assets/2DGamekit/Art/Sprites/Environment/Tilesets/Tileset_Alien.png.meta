@@ -1,0 +1,1771 @@
+fileFormatVersion: 2
+guid: 05f0bf62dcfb65a4ebd0402151fc3c11
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tileset_Alien_FloorCornerOuterLeft
+    21300002: Tileset_Alien_Floor0
+    21300004: Tileset_Alien_Floor1
+    21300006: Tileset_Alien_Floor2
+    21300008: Tileset_Alien_Floor3
+    21300010: Tileset_Alien_Floor4
+    21300012: Tileset_Alien_Floor5
+    21300014: Tileset_Alien_Floor6
+    21300016: Tileset_Alien_FloorCornerOuterRight
+    21300018: Tileset_Alien_WallLeft0
+    21300020: Tileset_Alien_Fill0
+    21300022: Tileset_Alien_Fill1
+    21300024: Tileset_Alien_Fill2
+    21300026: Tileset_Alien_Fill3
+    21300028: Tileset_Alien_Fill4
+    21300030: Tileset_Alien_Fill5
+    21300032: Tileset_Alien_Fill6
+    21300034: Tileset_Alien_WallRight0
+    21300036: Tileset_Alien_WallLeft1
+    21300038: Tileset_Alien_21
+    21300040: Tileset_Alien_22
+    21300042: Tileset_Alien_23
+    21300044: Tileset_Alien_24
+    21300046: Tileset_Alien_25
+    21300048: Tileset_Alien_Ceiling0
+    21300050: Tileset_Alien_Ceiling1
+    21300052: Tileset_Alien_WallRight1
+    21300054: Tileset_Alien_WallLeft2
+    21300056: Tileset_Alien_CeilingCornerOuterLeft
+    21300058: Tileset_Alien_Ceiling2
+    21300060: Tileset_Alien_Ceiling3
+    21300062: Tileset_Alien_Ceiling4
+    21300064: Tileset_Alien_Ceiling5
+    21300066: Tileset_Alien_Ceiling6
+    21300068: Tileset_Alien_CeilingCornerOuterRight
+    21300070: Tileset_Alien_WallRight2
+    21300072: Tileset_Alien_WallLeft3
+    21300074: Tileset_Alien_FloorSingleBlock
+    21300076: Tileset_Alien_FloorCornerInnerLeft0
+    21300078: Tileset_Alien_45
+    21300080: Tileset_Alien_46
+    21300082: Tileset_Alien_47
+    21300084: Tileset_Alien_WallRight3
+    21300086: Tileset_Alien_WallLeft4
+    21300088: Tileset_Alien_SingleBlock
+    21300090: Tileset_Alien_FloorCornerInnerRight0
+    21300092: Tileset_Alien_55
+    21300094: Tileset_Alien_56
+    21300096: Tileset_Alien_57
+    21300098: Tileset_Alien_WallRight4
+    21300100: Tileset_Alien_WallLeft5
+    21300102: Tileset_Alien_LeftWallCorner
+    21300104: Tileset_Alien_FloorSingleBlock0
+    21300106: Tileset_Alien_FloorSingleBlock1
+    21300108: Tileset_Alien_RightWallCorner
+    21300110: Tileset_Alien_65
+    21300112: Tileset_Alien_66
+    21300114: Tileset_Alien_67
+    21300116: Tileset_Alien_WallRight5
+    21300118: Tileset_Alien_WallLeft6
+    21300120: Tileset_Alien_FloorSingleBlockLeft
+    21300122: Tileset_Alien_FloorSingleBlock2
+    21300124: Tileset_Alien_FloorSingleBlock3
+    21300126: Tileset_Alien_FloorSingleBlockRight
+    21300128: Tileset_Alien_WallRight6
+    21300130: Tileset_Alien_80
+    21300132: Tileset_Alien_81
+    21300134: Tileset_Alien_82
+    21300136: Tileset_Alien_83
+    21300138: Tileset_Alien_84
+    21300140: Tileset_Alien_85
+    21300142: Tileset_Alien_86
+    21300144: Tileset_Alien_89
+    21300146: Tileset_Alien_90
+    21300148: Tileset_Alien_91
+    21300150: Tileset_Alien_92
+    21300152: Tileset_Alien_93
+    21300154: Tileset_Alien_94
+    21300156: Tileset_Alien_95
+    21300158: Tileset_Alien_SingleColumnwall0
+    21300160: Tileset_Alien_SingleColumnwall1
+    21300162: Tileset_Alien_SingleColumnwall2
+    21300164: Tileset_Alien_SingleColumnwall3
+    21300166: Tileset_Alien_SingleBlockCornerLeft
+    21300168: Tileset_Alien_SingleBlockCornerRight
+    21300170: Tileset_Alien_CeilingCornerFloorRight
+    21300172: Tileset_Alien_CeilingCornerFloorLeft
+    21300174: Tileset_Alien_SingleColumnCentreCeiling
+    21300176: Tileset_Alien_SingleColumnCentreCorners
+    21300178: Tileset_Alien_SingleColumnBottom
+    21300180: Tileset_Alien_WallLeftCornerFloor
+    21300182: Tileset_Alien_WallRightCornerFloor
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorCornerOuterLeft
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 131.64111}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.23486}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3649553090bffe6448c1bbac6d117c9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Floor0
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 131.25977}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.57227}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c246ed3366cc24f876bf0154431ab0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Floor1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 132.3418}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.18555}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca4e5e29a33d58341bae11942efaaeb9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Floor2
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 131.95508}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.7207}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e411b6c1076d4684298a3ebd4c776e3a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Floor3
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 132.3418}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.49414}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a544881d9316244d8210f5d1a1cba90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Floor4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 132.49023}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 133.25977}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd7b5add8e69384bbf8fbbbd68c1161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Floor5
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 132.57227}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 131.57227}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b3a2a1178afcf4887400ca2375e262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Floor6
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 133.49414}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 133.18555}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa3a6b62b8d155489bd05550dfae79a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorCornerOuterRight
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 131.57227}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 133.60498}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47a343604d41a446af8e06b0bc78c60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeft0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -248, y: 256}
+        - {x: -255, y: 219}
+        - {x: -255, y: -179}
+        - {x: -252, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a0360edd1e1c24da8a7ccab093f23d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Fill0
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c89d69e2ceea049998b72248d6d3e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Fill1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7967cf6eeffa5a447ad9be7e9ace6760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Fill2
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f632f10a88362429a942025cdd84b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Fill3
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8af0681aaebe5846b0de3a5528a4b1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Fill4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476b0b118e57d7141aa4926223092753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Fill5
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c69a2e7472b724987685114d9b915d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Fill6
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e25043bca6776a46894d31873088084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRight0
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 254, y: -256}
+        - {x: 254, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed1167ea876a0c42afa49f77b175196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeft1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -253, y: 256}
+        - {x: -253, y: -117}
+        - {x: -249, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cc34da2cf6afc4d90e2404c6c6700a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Ceiling0
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -251}
+        - {x: -245, y: -254}
+        - {x: 256, y: -254}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa00b4538a4028a4a89603bbb213c4f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Ceiling1
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -251}
+        - {x: 243, y: -251}
+        - {x: 256, y: -250}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d032809087aa343823026d85214331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRight1
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 254, y: -256}
+        - {x: 254, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266a3c46dabe643489d50730ba04baa1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeft2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -247, y: 256}
+        - {x: -247, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7e803c3f6a39047bb05f5d0f044226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_CeilingCornerOuterLeft
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -249, y: 256}
+        - {x: -256, y: 155}
+        - {x: -256, y: -250}
+        - {x: -235, y: -255}
+        - {x: 212, y: -255}
+        - {x: 256, y: -251}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546c2622d719b1f47bc5ced110badcfd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Ceiling2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -250}
+        - {x: -193, y: -254}
+        - {x: 256, y: -254}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540a8749ef16d46468629ef8f3480f6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Ceiling3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -250}
+        - {x: -238, y: -255}
+        - {x: -17, y: -255}
+        - {x: 256, y: -251}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a5584f04369364d98e2c42ffde0ece
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Ceiling4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -251}
+        - {x: -250, y: -255}
+        - {x: 256, y: -255}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6ba8a30b9c6f243b1b54c4502cf02e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Ceiling5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -251}
+        - {x: -185, y: -255}
+        - {x: 238, y: -255}
+        - {x: 256, y: -252}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82fa82804554c44c90c42c21feb8dbd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_Ceiling6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -250}
+        - {x: -206, y: -255}
+        - {x: 256, y: -255}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b9a46efbc5b6545b587e02ddfb896d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_CeilingCornerOuterRight
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -250}
+        - {x: -247, y: -255}
+        - {x: 246, y: -255}
+        - {x: 255, y: -217}
+        - {x: 255, y: 242}
+        - {x: 254, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907828934ae8aa740955002eba8818ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRight2
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 222, y: 9}
+        - {x: 254, y: 126}
+        - {x: 254, y: 256}
+        - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 254, y: -256}
+        - {x: 254, y: -100}
+        - {x: 229, y: 1}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00b709eaaf66a74e986e5eaec81f6b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeft3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -252, y: 256}
+        - {x: -252, y: -220}
+        - {x: -247, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1bdd9edfc54cb419aa69d79dccb918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorSingleBlock
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 133.96436}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 133.94287}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd0278d58408194bb1c6cf360c0db49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorCornerInnerLeft0
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 131.57812}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130.71436}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921eab791ab6f954ca883ffe6ce0ffc8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRight3
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2997cb648c45c684cbbb0ed418282815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeft4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -252, y: 256}
+        - {x: -252, y: 253}
+        - {x: -246, y: 233}
+        - {x: -246, y: 117}
+        - {x: -242, y: 32}
+        - {x: -248, y: -228}
+        - {x: -247, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2d7e7cb2b8e2c469b18bde740cda7a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleBlock
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 132.28467}
+        - {x: -256, y: -244}
+        - {x: -230, y: -253}
+        - {x: 233, y: -253}
+        - {x: 256, y: -234}
+        - {x: 256, y: 132.30225}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f88baa3716387340aac77948a5bbe3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorCornerInnerRight0
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 132.4419}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.72314}
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf19e62e202bf545a3dba7ad4fba194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRight4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea23cef3aaaef364b80ee6665e51e329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeft5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -247, y: 256}
+        - {x: -248, y: 251}
+        - {x: -248, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124ae7f7097215d47b32f7594cf4e4e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_LeftWallCorner
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 241}
+        - {x: 254, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f018b8b98d9754c83615d2aa3dbb5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorSingleBlock0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 133.45068}
+        - {x: -256, y: -255}
+        - {x: 256, y: -255}
+        - {x: 256, y: 133.53857}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567593382a2ded34783d77c47de9d20f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorSingleBlock1
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 256, y: 132.67432}
+        - {x: -256, y: 132.6753}
+        - {x: -256, y: -255}
+        - {x: 256, y: -255}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20609fc62909a514c86f5837b9d69fa7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_RightWallCorner
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -254, y: 256}
+        - {x: -256, y: 250}
+        - {x: -256, y: -255}
+        - {x: -250, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bae287580e7d454f90e84c1b7451db2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRight5
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 254, y: -256}
+        - {x: 254, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77421738ceed1974abf98e4e8cffe7e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeft6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -253, y: 256}
+        - {x: -253, y: -254}
+        - {x: -249, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bcf4175bdcf5f347ad688c06a915330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorSingleBlockLeft
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 133.22705}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.08252}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4dcfcdbd4155ac47930111ea6267413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorSingleBlock2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 132.26709}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 132.2666}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c869017816776f64eb546b0fe34298f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorSingleBlock3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 256, y: 133.31543}
+        - {x: -256, y: 131.58691}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0c94f069a39e245b46abfa95b86a93
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_FloorSingleBlockRight
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 133.03418}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 133.20557}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf24d4ee762705f4783a55391b8c3064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRight6
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 254, y: -256}
+        - {x: 254, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c29a6827995854f90652a44767b6c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -251}
+        - {x: -249, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cb861ab685da549960a5757367fccb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_89
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 255, y: -256}
+        - {x: 256, y: -254}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2196ce36d005aeb44ad3424ca4506b7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleColumnwall0
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0443d6d30b4298648828a567e0601961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleColumnwall1
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befa6fe3d92d0684dbb6aa5a5b4eff02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleColumnwall2
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63dd661dc539674408d898ec75f1ba9e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleColumnwall3
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4ccc58699265d498b77f9496564aee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleBlockCornerLeft
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00b4f7ce93213140aed986051373353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleBlockCornerRight
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119dd8b58c0d75f4e8833aba7fdf2e05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_CeilingCornerFloorRight
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2393a0c8e26a7f4789669a7c8eaca93
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_CeilingCornerFloorLeft
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8076ad5039def2b46bd33705ac4cdc9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleColumnCentreCeiling
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d3b35f45276e84981c92964e32a7ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleColumnCentreCorners
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abf15b356d7db040a43f66cfcfe667b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_SingleColumnBottom
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0b410b4a161e64cbc506a006b21c02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallLeftCornerFloor
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cf77d0599c79447aa280ba146cbcc6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Alien_WallRightCornerFloor
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7384bf1c3852e04291fd513e1c8cfd4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
