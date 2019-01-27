@@ -24,6 +24,9 @@ public class CharacterMotor : MonoBehaviour {
     private bool _isGrounded = true;
     public bool IsGrounded { get { return _isGrounded; } }
 
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
+
     // Start is called before the first frame update
     void Start() {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -67,6 +70,10 @@ public class CharacterMotor : MonoBehaviour {
     public bool DoJump() {
         if (!_isGrounded || !_canJump) { return false; }
         ApplyForce(transform.up, _jumpForce);
+        if(audioSource)
+        {
+            audioSource.PlayOneShot(jumpSound);
+        }
         return true;
     }
 

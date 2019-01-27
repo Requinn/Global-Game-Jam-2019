@@ -12,9 +12,15 @@ namespace MichaelWolfGames.Examples
     public class HealthPickup : PickupBase
     {
         public float HealthValue = 25f;
+
+        public AudioSource audioSource;
+        public AudioClip chargeSound;
+
         protected override void DoOnPickedUp(HealthManagerBase healthManager)
         {
             healthManager.AddHealth(HealthValue);
+            if(audioSource)
+                audioSource.PlayOneShot(chargeSound);
         }
 
         protected override bool CheckPickUpConditions(HealthManagerBase healthManager)

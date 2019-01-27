@@ -14,6 +14,9 @@ public class CheckPoint : MonoBehaviour
     public delegate void CheckPointAcquiredEvent(int index);
     public CheckPointAcquiredEvent OnChecked;
 
+    public AudioSource audioSource;
+    public AudioClip chargeSound;
+
     void Start() {
         position = transform.position;
     }
@@ -28,6 +31,7 @@ public class CheckPoint : MonoBehaviour
         if (h)
         {
             h.AddHealth(3);
+            audioSource.PlayOneShot(chargeSound);
         }
         OnChecked(_index);
     }
