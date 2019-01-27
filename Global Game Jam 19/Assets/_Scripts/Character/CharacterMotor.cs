@@ -16,7 +16,7 @@ public class CharacterMotor : MonoBehaviour
     [SerializeField]
     private float _moveDamping = 0.001f, _movementForce = 0f;
     private Vector3 _velocity = Vector3.zero;
-    private bool _canMove = true;
+    private bool _canMove = true, _canJump = true;
 
     [SerializeField]
     private LayerMask _groundLayer;
@@ -44,6 +44,10 @@ public class CharacterMotor : MonoBehaviour
         _canMove = canMove;
     }
 
+    public void SetJump (bool canJump) {
+        _canJump = canJump;
+    }
+
     public void StopAllMovement() {
         _rigidbody.velocity = Vector3.zero;
     }
@@ -63,7 +67,7 @@ public class CharacterMotor : MonoBehaviour
     /// Do a Jump
     /// </summary>
     public void Jump() {
-        if (!_isGrounded || !_canMove) { return; }
+        if (!_isGrounded || !_canJump) { return; }
         ApplyForce(transform.up, _jumpForce);
     }
 
@@ -72,6 +76,10 @@ public class CharacterMotor : MonoBehaviour
     /// </summary>
     /// <param name="force"></param>
     public void Move(float force) {
+        if(!_canMove) { return; }
+        if(force != 0 && _rigidbody.velocity.x == 0 && !_isGrounded) {
+            return;
+        }
         Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
         _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveDamping);
     }
@@ -83,8 +91,9 @@ public class CharacterMotor : MonoBehaviour
     private void CheckGrounded() {
         bool wasGrounded = _isGrounded;
         _isGrounded = false;
-        _hit = Physics2D.Raycast(transform.position, Vector2.down, _centerHeightAdjust, _groundLayer);
-        Debug.DrawLine(transform.position, transform.position + new Vector3(Vector2.down.x * _centerHeightAdjust, Vector2.down.y * _centerHeightAdjust), Color.red);
+        Vector3 originOffset = transform.position + new Vector3(_collider.offset.x, _collider.offset.y, 0);
+        _hit = Physics2D.Raycast(originOffset, Vector2.down, _centerHeightAdjust, _groundLayer);
+        Debug.DrawLine(originOffset, transform.position + new Vector3(Vector2.down.x * _centerHeightAdjust, Vector2.down.y * _centerHeightAdjust), Color.red);
         if(_hit) {
             _isGrounded = true;
         }
