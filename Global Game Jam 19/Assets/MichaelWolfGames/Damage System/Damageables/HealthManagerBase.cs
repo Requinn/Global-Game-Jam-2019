@@ -81,6 +81,12 @@ namespace MichaelWolfGames.DamageSystem
             set { _onUpdateHealth = value; }
         }
 
+        private Action<float> _onHealHealth = delegate { };
+        public Action<float> OnHealHealth {
+            get { return _onHealHealth; }
+            set { _onHealHealth = value;}
+        }
+
         #endregion
 
         //================================================================================
@@ -97,19 +103,20 @@ namespace MichaelWolfGames.DamageSystem
         {
             currentHealth += health;
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+            OnHealHealth(health);
             OnUpdateHealth(currentHealth);
         }
 
         public void Revive()
         {
-            if (!IsDead) return;
+            //if (!IsDead) return;
             currentHealth = maxHealth;
             OnUpdateHealth(currentHealth);
             HandleRevive();
         }
         public virtual void Kill()
         {
-            if (IsDead) return;
+            //if (IsDead) return;
             currentHealth = 0f;
             OnUpdateHealth(currentHealth);
             HandleDeath();

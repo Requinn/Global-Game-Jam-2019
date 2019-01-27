@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,14 +7,18 @@ public class Spring : MonoBehaviour
 {
     [SerializeField]
     private float launch;
-    private Coroutine springJuice;
+
+    [SerializeField] private List<AudioClip> springSounds;
+    private Coroutine springJuice, disablePlayer;
     private Animator springAnimator;
     private int springHash;
+    private AudioSource springSource;
     
     private void Start()
     {
         springAnimator = GetComponentInChildren<Animator>();
         springHash = Animator.StringToHash("Active");
+        springSource = GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -24,12 +29,12 @@ public class Spring : MonoBehaviour
 
     private void Launch(Rigidbody2D arb2d)
     {
-        arb2d.velocity = new Vector2(arb2d.velocity.x, 0);
+        arb2d.velocity = new Vector2(0, 0);
         if (arb2d.gameObject.CompareTag("Player"))
         {
-
-            arb2d.gameObject.GetComponent<CharacterMotor>()
-                .ApplyForce(transform.up, launch*2);
+            CharacterMotor playerMotor = arb2d.gameObject.GetComponent<CharacterMotor>();
+            disablePlayer = StartCoroutine(IDisablePlayer(playerMotor));
+            playerMotor.ApplyForce(transform.up, launch*2);
             
         }
         else
@@ -37,9 +42,7 @@ public class Spring : MonoBehaviour
             arb2d.AddForce(transform.up * launch, ForceMode2D.Impulse);
         }
 
-        //Debug.Log(gameObject.transform.up * launch);
         arb2d.AddForce(gameObject.transform.up * launch , ForceMode2D.Force);
-        //Debug.Log("Launched.");
         springJuice = StartCoroutine(ISpringJuice());
         
     }
@@ -48,10 +51,19 @@ public class Spring : MonoBehaviour
     {
         //Debug.Log("Started.");
         springAnimator.SetTrigger(springHash);
+        springSource.clip = Randomizer.GetRandom(springSounds);
+        springSource.Play();
         yield return null;
         springJuice = null;
     }
 
+    IEnumerator IDisablePlayer(CharacterMotor pm)
+    {
+        pm.SetMovement(false);
+        pm.StopAllMovement();
+        yield return new WaitForSeconds(0.5f);
+        pm.SetMovement(true);
+    }
     void FixedUpdate()
     {
         if(springJuice == null)

@@ -16,6 +16,9 @@ public class Character : MonoBehaviour, IDamageable
     private Animator _animator;
     private GameObject _spriteObject;
 
+    [SerializeField]
+    private bool _isTestingMode = false;
+
     public event Damage.DamageEventMutator MutateDamage;
     public event Damage.DamageEventHandler OnTakeDamage;
 
@@ -28,25 +31,34 @@ public class Character : MonoBehaviour, IDamageable
         _animator = _spriteObject.GetComponent<Animator>();
 
         _healthManager.OnDeath += HandleDeath;
+        _healthManager.OnHealHealth += HandleHeal;
+
         _healthManager.SetHealth(JUMP_COUNT_MAX);
 
     }
 
+    bool didMove = false;
     // Update is called once per frame
     void Update()
     {
         //handle inputs here
         float movementForce = Input.GetAxis("Horizontal");
         if (movementForce != 0) {
-            _motor.Move(movementForce);
+            didMove = _motor.DoMove(movementForce);
         }
         if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
-            _motor.Jump();
-            ApplyDamage(this, 1f, transform.position);
+            bool didJump = _motor.DoJump();
+            if (!_isTestingMode && didJump) {
+                ApplyDamage(this, 1f, transform.position);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Reset();
         }
         FlipPlayer(movementForce);
         _animator.SetBool("Ground", _motor.IsGrounded);
-        _animator.SetFloat("Speed", Mathf.Abs(movementForce));
+        if(didMove) _animator.SetFloat("Speed", Mathf.Abs(movementForce));
+        else _animator.SetFloat("Speed", Mathf.Abs(0));
     }
 
     /// <summary>
@@ -76,19 +88,45 @@ public class Character : MonoBehaviour, IDamageable
     /// Do stuff on death
     /// </summary>
     private void HandleDeath() {
-        _motor.SetMovement(false);
-        Debug.Log("We Died");
+        _motor.SetJump(false);
     }
 
+    /// <summary>
+    /// Do stuff when we revive
+    /// </summary>
+    private void HandleHeal(float h) {
+        _motor.SetJump(true);
+    }
+    /// <summary>
+    /// Check when we pick up health to re-enable the jump
+    /// </summary>
+    /// <param name="obj"></param>
+    private void CheckPositiveHealth(float obj) {
+        if (_healthManager.CurrentHealth > 0) {
+            //_healthManager.Revive();
+            _motor.SetJump(true);
+        }
+    }
     /// <summary>
     /// Stop all movement on the player and go back to the last checkpoint stepped on
     /// </summary>
     public void Reset() {
-        _healthManager.AddHealth(JUMP_COUNT_MAX);
         _motor.StopAllMovement();
-        transform.position = CheckpointHandler.Instance.GetCurrentCheckpointPosition();
+        _motor.SetMovement(false);
+        _motor.SetJump(false);
+        SceneFader.Instance.FadeIn(SceneFadeOutAction);
     }
 
+    private void SceneFadeOutAction() {
+        transform.position = CheckpointHandler.Instance.GetCurrentCheckpointPosition();
+        SceneFader.Instance.FadeOut(DoResetSequence);
+    }
+
+    private void DoResetSequence() {
+        _healthManager.Revive();
+        _motor.SetJump(true);
+        _motor.SetMovement(true);
+    }
     private Quaternion _rightRotation = Quaternion.Euler(Vector3.zero), _leftRotation = Quaternion.Euler(new Vector3(0, 180f, 0));
     /// <summary>
     /// flips player sprite based on direction

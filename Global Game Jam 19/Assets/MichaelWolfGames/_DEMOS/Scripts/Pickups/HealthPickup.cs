@@ -19,13 +19,7 @@ namespace MichaelWolfGames.Examples
 
         protected override bool CheckPickUpConditions(HealthManagerBase healthManager)
         {
-            if (healthManager.IsDead) return false;
-            if (healthManager.PercentValue >= 1f)
-            {
-                return false;
-            }
-
-            return base.CheckPickUpConditions(healthManager);
+            return true;
         }
     }
 }

@@ -16,7 +16,7 @@ public class CharacterMotor : MonoBehaviour
     [SerializeField]
     private float _moveDamping = 0.001f, _movementForce = 0f;
     private Vector3 _velocity = Vector3.zero;
-    private bool _canMove = true;
+    private bool _canMove = true, _canJump = true;
 
     [SerializeField]
     private LayerMask _groundLayer;
@@ -44,6 +44,10 @@ public class CharacterMotor : MonoBehaviour
         _canMove = canMove;
     }
 
+    public void SetJump (bool canJump) {
+        _canJump = canJump;
+    }
+
     public void StopAllMovement() {
         _rigidbody.velocity = Vector3.zero;
     }
@@ -62,18 +66,27 @@ public class CharacterMotor : MonoBehaviour
     /// <summary>
     /// Do a Jump
     /// </summary>
-    public void Jump() {
-        if (!_isGrounded || !_canMove) { return; }
+    public bool DoJump() {
+        if (!_isGrounded || !_canJump) { return false; }
         ApplyForce(transform.up, _jumpForce);
+        return true;
     }
 
     /// <summary>
     /// Move horizontally
     /// </summary>
     /// <param name="force"></param>
-    public void Move(float force) {
+    public bool DoMove(float force) {
+        if(!_canMove) { return false; }
+        RaycastHit2D midAirWallCheck;
+        //mid air wall check
+        midAirWallCheck = Physics2D.BoxCast(transform.position, _collider.bounds.size, 0, (transform.right * force).normalized, _collider.bounds.extents.x + .075f, 1 << 8);
+        if(!_isGrounded && midAirWallCheck) {
+            return false;
+        }
         Vector3 _targetVelocity = new Vector2(force * _movementSpeed, _rigidbody.velocity.y);
         _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, _targetVelocity, ref _velocity, _moveDamping);
+        return true;
     }
 
     RaycastHit2D _hit;
@@ -83,8 +96,9 @@ public class CharacterMotor : MonoBehaviour
     private void CheckGrounded() {
         bool wasGrounded = _isGrounded;
         _isGrounded = false;
-        _hit = Physics2D.Raycast(transform.position, Vector2.down, _centerHeightAdjust, _groundLayer);
-        Debug.DrawLine(transform.position, transform.position + new Vector3(Vector2.down.x * _centerHeightAdjust, Vector2.down.y * _centerHeightAdjust), Color.red);
+        Vector3 originOffset = transform.position + new Vector3(_collider.offset.x, _collider.offset.y, 0);
+        _hit = Physics2D.Raycast(originOffset, Vector2.down, _centerHeightAdjust, _groundLayer);
+        Debug.DrawLine(originOffset, transform.position + new Vector3(Vector2.down.x * _centerHeightAdjust, Vector2.down.y * _centerHeightAdjust), Color.red);
         if(_hit) {
             _isGrounded = true;
         }

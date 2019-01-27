@@ -29,8 +29,18 @@ namespace MichaelWolfGames.DamageSystem
 
 	        base.HandleDamage(sender, ref args);
 	    }
+        
+        protected override void HandleRevive() {
+            CurrentHealth = 3;
+            OnRevive();
+        }
 
-	    protected virtual IEnumerator CoInvulnerabilityDelay(float delay)
+        protected override void HandleDeath() {
+            CurrentHealth = 0;
+            OnDeath();
+        }
+
+        protected virtual IEnumerator CoInvulnerabilityDelay(float delay)
 	    {
 	        _isInvulnerable = true;
             yield return new WaitForSeconds(_invulnTime);

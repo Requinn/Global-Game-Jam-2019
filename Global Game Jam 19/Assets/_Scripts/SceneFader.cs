@@ -6,7 +6,8 @@ using UnityEngine;
 /// <summary>
 /// Fades the screen and blocks UI input on scene change
 /// </summary>
-public class SceneLoadFade : MonoBehaviour {
+public class SceneFader : MonoBehaviour {
+    public static SceneFader Instance;
     [SerializeField]
     private CanvasGroup _fadeCanvas;
     [SerializeField]
@@ -19,6 +20,7 @@ public class SceneLoadFade : MonoBehaviour {
     }
 
     private void Start() {
+        Instance = this;
         //LevelLoader LL = FindObjectOfType<LevelLoader>();
         //LL.OnStartLoad += FadeIn;
         //LL.OnEndLoad += FadeOut;
@@ -27,15 +29,15 @@ public class SceneLoadFade : MonoBehaviour {
     /// <summary>
     /// Fade the canvas in
     /// </summary>
-    private void FadeIn() {
-        InitiateFade(0f, 1f);
+    public void FadeIn(Action fadeCompleteAction = null) {
+        InitiateFade(0f, 1f, fadeCompleteAction);
     }
 
     /// <summary>
     /// Fade the canvas out
     /// </summary>
-    private void FadeOut() {
-        InitiateFade(1f, 0f);
+    public void FadeOut(Action fadeCompleteAction = null) {
+        InitiateFade(1f, 0f, fadeCompleteAction);
     }
 
     /// <summary>
@@ -43,11 +45,11 @@ public class SceneLoadFade : MonoBehaviour {
     /// </summary>
     /// <param name="from"></param>
     /// <param name="to"></param>
-    private void InitiateFade(float from, float to) {
+    private void InitiateFade(float from, float to, Action fadeCompleteAction) {
         //stop current fade and go into the new one
         if (_fadeRoutine != null) StopCoroutine(_fadeRoutine);
         _fadeCanvas.gameObject.SetActive(true);
-        _fadeRoutine = StartCoroutine(FadeFromTo(from, to));
+        _fadeRoutine = StartCoroutine(FadeFromTo(from, to, fadeCompleteAction));
     }
 
     /// <summary>
@@ -56,7 +58,7 @@ public class SceneLoadFade : MonoBehaviour {
     /// <param name="from"></param>
     /// <param name="to"></param>
     /// <returns></returns>
-    private IEnumerator FadeFromTo(float from, float to, Action onFadeComplete = null) {
+    private IEnumerator FadeFromTo(float from, float to, Action onFadeComplete) {
         float timer = 0;
         float alphaValue = from;
 
@@ -70,7 +72,7 @@ public class SceneLoadFade : MonoBehaviour {
         //if we are fully invisible, just turn it off
         if (alphaValue == 0f) {
             _fadeCanvas.gameObject.SetActive(false);
-            onFadeComplete();
         }
+        if(onFadeComplete != null) onFadeComplete();
     }
 }
