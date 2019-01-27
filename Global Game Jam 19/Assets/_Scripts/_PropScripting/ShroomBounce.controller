@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: springCtrlr
+  m_Name: ShroomBounce
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Active
@@ -96,7 +96,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 04ee5a1f9ed9d5b418e98b777f3160d8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7e305479027e1804e901cc11905ffc7c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
