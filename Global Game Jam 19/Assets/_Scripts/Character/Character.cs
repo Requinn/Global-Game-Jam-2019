@@ -14,7 +14,8 @@ public class Character : MonoBehaviour, IDamageable
     public CharacterMotor Motor { get { return _motor; } }
     private HealthManager _healthManager;
     private Animator _animator;
-    private GameObject _spriteObject;
+    [SerializeField] private GameObject _spriteObject;
+
 
     [SerializeField]
     private bool _isTestingMode = false;
@@ -27,7 +28,7 @@ public class Character : MonoBehaviour, IDamageable
     {
         _motor = GetComponent<CharacterMotor>();
         _healthManager = GetComponent<HealthManager>();
-        _spriteObject = transform.GetChild(0).gameObject;
+        //_spriteObject = transform.GetChild(0).gameObject;
         _animator = _spriteObject.GetComponent<Animator>();
 
         _healthManager.OnDeath += HandleDeath;
