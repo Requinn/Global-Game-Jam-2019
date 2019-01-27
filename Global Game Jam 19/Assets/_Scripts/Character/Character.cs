@@ -21,6 +21,9 @@ public class Character : MonoBehaviour, IDamageable
     [SerializeField]
     private bool _isTestingMode = false;
 
+    private bool _canDoInputs = true;
+    public bool CanDoInputs { get { return _canDoInputs; } set { _canDoInputs = value; } }
+
     public event Damage.DamageEventMutator MutateDamage;
     public event Damage.DamageEventHandler OnTakeDamage;
 
@@ -40,30 +43,47 @@ public class Character : MonoBehaviour, IDamageable
 
     }
 
-    bool didMove = false;
+    bool didMove = false, doJump = false;
     // Update is called once per frame
     void Update()
     {
+        doJump = false;
+        didMove = false;
         //handle inputs here
-        float movementForce = Input.GetAxis("Horizontal");
-        if (movementForce != 0) {
-            didMove = _motor.DoMove(movementForce);
+        float movementForce = _canDoInputs ? Input.GetAxis("Horizontal") : 0;
+
+        if(_canDoInputs && (Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))) {
+            doJump = true;
         }
-        if(Input.GetButtonDown("Jump") || (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Reset();
+        }
+
+        DoMovements(movementForce, doJump);
+    }
+
+    /// <summary>
+    /// Perform the movements on the player
+    /// </summary>
+    public void DoMovements(float movement, bool doJump) {
+        //horizontal movement
+        if (movement != 0) {
+            didMove = _motor.DoMove(movement);
+        }
+
+        //did we jump
+        if (doJump) {
             bool didJump = _motor.DoJump();
             if (!_isTestingMode && didJump) {
                 ApplyDamage(this, 1f, transform.position);
             }
         }
-        if (Input.GetKeyDown(KeyCode.R)) {
-            Reset();
-        }
-        FlipPlayer(movementForce);
+        //animator stuff
+        FlipPlayer(movement);
         _animator.SetBool("Ground", _motor.IsGrounded);
-        if(didMove) _animator.SetFloat("Speed", Mathf.Abs(movementForce));
+        if (didMove) _animator.SetFloat("Speed", Mathf.Abs(movement));
         else _animator.SetFloat("Speed", Mathf.Abs(0));
     }
-
     /// <summary>
     /// Shouldn't be used? If used reroutes call to ApplyDamage(obj, float, vec3)
     /// </summary>
