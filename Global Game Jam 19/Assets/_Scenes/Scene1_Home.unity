@@ -679,7 +679,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -703,7 +703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292910679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.991814, y: -4.868312, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1010,6 +1010,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &518288189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 625223321, guid: 989f432d811ad4740a34c97da68a545f,
+    type: 3}
+  m_PrefabInstance: {fileID: 976830499}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb019a974c17263439d3fe5dbdee4e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &522467371 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4852407597240520314, guid: 989f432d811ad4740a34c97da68a545f,
@@ -1089,7 +1101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21301380, guid: d4252acbe58df234fba88c0ce13a262b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1758,6 +1770,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852407597240520318, guid: 989f432d811ad4740a34c97da68a545f,
+        type: 3}
+      propertyPath: currentHealth
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4852407597240520317, guid: 989f432d811ad4740a34c97da68a545f,
         type: 3}
@@ -2824,7 +2841,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21301380, guid: d4252acbe58df234fba88c0ce13a262b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3150,6 +3167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503238451423019872, guid: bbecfbc2bda66f84abfbd648b619f112,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 14.899902
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbecfbc2bda66f84abfbd648b619f112, type: 3}
@@ -3989,6 +4011,44 @@ MonoBehaviour:
   _affectingPlayer: {fileID: 522467371}
   _reactorRoomCamera: {fileID: 853506714}
   _inspectReactorNode: {fileID: 1293524891}
+  OnStartSequence:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 113192911}
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 518288189}
+        m_MethodName: SetFace_Surprised
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 518288189}
+        m_MethodName: SetFaceHealthUpdate
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2065789169
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,7 +4143,7 @@ PrefabInstance:
     - target: {fileID: 3841460995270343738, guid: d3fb78ecfcdae8f409e0737677342b2a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.525
+      value: -17.365
       objectReference: {fileID: 0}
     - target: {fileID: 3841460995270343738, guid: d3fb78ecfcdae8f409e0737677342b2a,
         type: 3}
@@ -4134,6 +4194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841460995270343737, guid: d3fb78ecfcdae8f409e0737677342b2a,
+        type: 3}
+      propertyPath: controlSupressTime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2142453709, guid: d3fb78ecfcdae8f409e0737677342b2a, type: 3}
       propertyPath: m_IsActive

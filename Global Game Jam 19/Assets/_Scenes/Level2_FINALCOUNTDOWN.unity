@@ -9152,6 +9152,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 4.39
       objectReference: {fileID: 0}
+    - target: {fileID: 198386250598068490, guid: dc38f7be903407d4185ce8488a14d7b6,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 6.4450073
+      objectReference: {fileID: 0}
+    - target: {fileID: 198968269534306846, guid: dc38f7be903407d4185ce8488a14d7b6,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 6.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc38f7be903407d4185ce8488a14d7b6, type: 3}
 --- !u!1001 &1339112414
