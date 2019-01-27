@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Spring : MonoBehaviour
 {
-    [SerializeField]
-    private float launch;
+    [SerializeField] private float launch;
+    [SerializeField] private float controlSupressTime = 0.5f;
 
     [SerializeField] private List<AudioClip> springSounds;
     private Coroutine springJuice, disablePlayer;
@@ -61,7 +61,7 @@ public class Spring : MonoBehaviour
     {
         pm.SetMovement(false);
         pm.StopAllMovement();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(controlSupressTime);
         pm.SetMovement(true);
     }
     void FixedUpdate()
