@@ -19,9 +19,9 @@ MonoBehaviour:
   BackgroundColor: {r: 0.8039216, g: 0.8039216, b: 0.8039216, a: 0.8039216}
   VisualTileSize: {x: 128, y: 128}
   VisualTilePadding: 1
-  TileRowLength: 3
+  TileRowLength: 9
   m_tileViews: []
-  m_tilesetWidth: 3
+  m_tilesetWidth: 9
   m_tilesetHeight: 21
   m_brushes: []
   m_tiles:
@@ -947,7 +947,7 @@ MonoBehaviour:
       height: 0.0625
     collData:
       vertices: []
-      type: 0
+      type: 1
     paramContainer:
       m_paramList: []
     prefabData:
@@ -966,7 +966,7 @@ MonoBehaviour:
       height: 0.0625
     collData:
       vertices: []
-      type: 0
+      type: 1
     paramContainer:
       m_paramList: []
     prefabData:
@@ -1214,7 +1214,7 @@ MonoBehaviour:
       height: 0.0625
     collData:
       vertices: []
-      type: 0
+      type: 1
     paramContainer:
       m_paramList: []
     prefabData:
