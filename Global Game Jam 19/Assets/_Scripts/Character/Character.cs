@@ -111,7 +111,12 @@ public class Character : MonoBehaviour, IDamageable
     /// <summary>
     /// Stop all movement on the player and go back to the last checkpoint stepped on
     /// </summary>
-    public void Reset() {
+    public void Reset()
+    {
+        if (CheckpointHandler.Instance.CurrentIndex < 0)
+        {
+            return;
+        }
         _motor.StopAllMovement();
         _motor.SetMovement(false);
         _motor.SetJump(false);
