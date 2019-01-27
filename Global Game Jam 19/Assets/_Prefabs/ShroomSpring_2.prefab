@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 2995965464316317530}
   - component: {fileID: 828311668847178006}
   m_Layer: 0
-  m_Name: ShroomSpring
+  m_Name: ShroomSpring_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64e15b79fb2cc14faf4e393ef17f98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launch: 12
+  launch: 9.08
   springSounds:
   - {fileID: 8300000, guid: c596b3d063db9ea4a874ddff3ccea7c6, type: 3}
   - {fileID: 8300000, guid: 3e59165d90916bd4a9075941cd216e69, type: 3}
