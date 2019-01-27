@@ -67,6 +67,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1995682014692052465, guid: f378a72e358096448a93bc64995a5f88,
+        type: 3}
+      propertyPath: chargeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bae535aabb96d724894f588db0021ee3, type: 3}
+    - target: {fileID: 1995682014692052465, guid: f378a72e358096448a93bc64995a5f88,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 84169983886751522}
     - target: {fileID: 1995682014792694089, guid: f378a72e358096448a93bc64995a5f88,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -84,3 +94,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f378a72e358096448a93bc64995a5f88, type: 3}
+--- !u!82 &84169983886751522 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1045309901472783790, guid: f378a72e358096448a93bc64995a5f88,
+    type: 3}
+  m_PrefabInstance: {fileID: 1128899334485191308}
+  m_PrefabAsset: {fileID: 0}
