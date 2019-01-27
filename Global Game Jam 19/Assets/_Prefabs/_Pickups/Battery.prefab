@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b87d8455c074ed187439d41c31d4cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyOnPickup: 1
+  DestroyOnPickup: 0
   HealthValue: 1
 --- !u!61 &1995682014692052470
 BoxCollider2D:
