@@ -7,7 +7,7 @@ using UnityEngine;
 /// Fades the screen and blocks UI input on scene change
 /// </summary>
 public class SceneFader : MonoBehaviour {
-    static SceneFader Instance;
+    public static SceneFader Instance;
     [SerializeField]
     private CanvasGroup _fadeCanvas;
     [SerializeField]
@@ -72,7 +72,7 @@ public class SceneFader : MonoBehaviour {
         //if we are fully invisible, just turn it off
         if (alphaValue == 0f) {
             _fadeCanvas.gameObject.SetActive(false);
-            onFadeComplete();
         }
+        onFadeComplete();
     }
 }
