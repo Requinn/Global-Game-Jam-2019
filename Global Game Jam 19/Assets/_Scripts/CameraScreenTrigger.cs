@@ -22,8 +22,12 @@ public class CameraScreenTrigger : MonoBehaviour
         _assignedIndex = newIndex;
     }
 
-    void OnTriggerExit2D(Collider2D c) {
+    public void SetWallActive()
+    {
         _blockingWallObject.SetActive(true);
+    }
+    
+    void OnTriggerEnter2D(Collider2D c) {
         OnCameraTrigger(_assignedIndex);
     }
 }
