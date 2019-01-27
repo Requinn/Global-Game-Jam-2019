@@ -15,7 +15,8 @@ public class Character : MonoBehaviour, IDamageable
     private HealthManager _healthManager;
     private Animator _animator;
     [SerializeField] private GameObject _spriteObject;
-
+    private bool _shouldReset = false;
+    public bool ShouldReset => _shouldReset;
 
     [SerializeField]
     private bool _isTestingMode = false;
@@ -33,6 +34,7 @@ public class Character : MonoBehaviour, IDamageable
 
         _healthManager.OnDeath += HandleDeath;
         _healthManager.OnHealHealth += HandleHeal;
+        _healthManager.OnUpdateHealth += CheckPositiveHealth;
 
         _healthManager.SetHealth(JUMP_COUNT_MAX);
 
@@ -92,6 +94,10 @@ public class Character : MonoBehaviour, IDamageable
         _motor.SetJump(false);
     }
 
+    public void SetResetState(bool reset) {
+        _shouldReset = reset;
+    }
+
     /// <summary>
     /// Do stuff when we revive
     /// </summary>
@@ -103,11 +109,10 @@ public class Character : MonoBehaviour, IDamageable
     /// </summary>
     /// <param name="obj"></param>
     private void CheckPositiveHealth(float obj) {
-        if (_healthManager.CurrentHealth > 0) {
-            //_healthManager.Revive();
-            _motor.SetJump(true);
-        }
+        bool isHealthy = _healthManager.CurrentHealth > 0;
+        SetResetState(!isHealthy);
     }
+
     /// <summary>
     /// Stop all movement on the player and go back to the last checkpoint stepped on
     /// </summary>
