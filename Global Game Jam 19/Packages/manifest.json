@@ -1,10 +1,7 @@
 {
   "dependencies": {
-<<<<<<< HEAD
     "com.unity.2d.psdimporter": "1.0.0-preview.2",
-=======
     "com.unity.2d.animation": "2.0.0-preview.1",
->>>>>>> c7bd224720c65b321d07b55054ad4b7a498a44dd
     "com.unity.2d.spriteshape": "1.0.12-preview.1",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.2.2",
