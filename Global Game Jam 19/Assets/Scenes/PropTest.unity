@@ -709,6 +709,16 @@ PrefabInstance:
       propertyPath: travelSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1603287485487690044, guid: c3419745cb4748f4eb6a680832e0695a,
+        type: 3}
+      propertyPath: startingNode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603287485487690044, guid: c3419745cb4748f4eb6a680832e0695a,
+        type: 3}
+      propertyPath: activateOnPlayerTouch
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3419745cb4748f4eb6a680832e0695a, type: 3}
 --- !u!1001 &2516684964184024429

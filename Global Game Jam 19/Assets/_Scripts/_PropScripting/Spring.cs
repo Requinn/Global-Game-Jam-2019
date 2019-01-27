@@ -6,7 +6,7 @@ public class Spring : MonoBehaviour
 {
     [SerializeField]
     private float launch;
-    private Coroutine springJuice;
+    private Coroutine springJuice, disablePlayer;
     private Animator springAnimator;
     private int springHash;
     
@@ -24,12 +24,12 @@ public class Spring : MonoBehaviour
 
     private void Launch(Rigidbody2D arb2d)
     {
-        arb2d.velocity = new Vector2(arb2d.velocity.x, 0);
+        arb2d.velocity = new Vector2(0, 0);
         if (arb2d.gameObject.CompareTag("Player"))
         {
-
-            arb2d.gameObject.GetComponent<CharacterMotor>()
-                .ApplyForce(transform.up, launch*2);
+            CharacterMotor playerMotor = arb2d.gameObject.GetComponent<CharacterMotor>();
+            disablePlayer = StartCoroutine(IDisablePlayer(playerMotor));
+            playerMotor.ApplyForce(transform.up, launch*2);
             
         }
         else
@@ -52,6 +52,13 @@ public class Spring : MonoBehaviour
         springJuice = null;
     }
 
+    IEnumerator IDisablePlayer(CharacterMotor pm)
+    {
+        pm.SetMovement(false);
+        pm.StopAllMovement();
+        yield return new WaitForSeconds(0.5f);
+        pm.SetMovement(true);
+    }
     void FixedUpdate()
     {
         if(springJuice == null)
