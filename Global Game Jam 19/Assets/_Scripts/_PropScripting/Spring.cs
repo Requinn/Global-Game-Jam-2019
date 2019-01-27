@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,14 +7,18 @@ public class Spring : MonoBehaviour
 {
     [SerializeField]
     private float launch;
+
+    [SerializeField] private List<AudioClip> springSounds;
     private Coroutine springJuice, disablePlayer;
     private Animator springAnimator;
     private int springHash;
+    private AudioSource springSource;
     
     private void Start()
     {
         springAnimator = GetComponentInChildren<Animator>();
         springHash = Animator.StringToHash("Active");
+        springSource = GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -37,9 +42,7 @@ public class Spring : MonoBehaviour
             arb2d.AddForce(transform.up * launch, ForceMode2D.Impulse);
         }
 
-        //Debug.Log(gameObject.transform.up * launch);
         arb2d.AddForce(gameObject.transform.up * launch , ForceMode2D.Force);
-        //Debug.Log("Launched.");
         springJuice = StartCoroutine(ISpringJuice());
         
     }
@@ -48,6 +51,8 @@ public class Spring : MonoBehaviour
     {
         //Debug.Log("Started.");
         springAnimator.SetTrigger(springHash);
+        springSource.clip = Randomizer.GetRandom(springSounds);
+        springSource.Play();
         yield return null;
         springJuice = null;
     }
