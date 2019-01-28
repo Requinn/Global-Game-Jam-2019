@@ -9,6 +9,9 @@ public class AmbientCharge : MonoBehaviour
     private Coroutine addChargeCoroutine = null;
     public float rechargeDelay = 1.0f;
 
+    public AudioSource audioSource;
+    public AudioClip chargeSound;
+
     void Start()
     {
         if(chargeManager == null)
@@ -32,6 +35,7 @@ public class AmbientCharge : MonoBehaviour
         {
             yield return new WaitForSeconds(delay);
             chargeManager.AddHealth(1f);
+            audioSource.PlayOneShot(chargeSound);
         }
         addChargeCoroutine = null;
     }
