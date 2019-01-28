@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using MichaelWolfGames.DamageSystem;
 using UnityEngine;
 
@@ -36,7 +37,8 @@ namespace MichaelWolfGames.Examples
                     Destroy(this.gameObject);
                 }
                 else {
-                    gameObject.SetActive(false);
+                    StartCoroutine(CoWaitToDisable(0.15f));
+                    //gameObject.SetActive(false);
                 }
             }
         }
@@ -61,6 +63,11 @@ namespace MichaelWolfGames.Examples
             return !IsPickedUp;
         }
 
+        private IEnumerator CoWaitToDisable(float time)
+        {
+            yield return new WaitForSeconds(time);
+            gameObject.SetActive(false);
+        }
 
     }
 }
