@@ -19,6 +19,7 @@ public class Explosion : MonoBehaviour
     private IEnumerator DelayedShutOff() {
         _isExploding = true;
         _explosionImage.SetActive(true);
+        _explosionImage.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.75f);
         _explosionImage.SetActive(false);
         _isExploding = false;

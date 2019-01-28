@@ -15,12 +15,13 @@ public class ReactorExplosionSequence : SequenceObject
     private SceneLoader _sceneloader;
 
     [Header("Explosions")]
+    [SerializeField]
     private Explosion[] _explosions;
 
     public override IEnumerator DoSequenceAction() {
         //wait
         yield return new WaitForSeconds(1.5f);
-        //StartCoroutine(DoExplosions());
+        StartCoroutine(DoExplosions());
         yield return new WaitForSeconds(0.33f);
         //perform a jump
         _affectingPlayer.DoMovements(0, true);
