@@ -67,6 +67,11 @@ public class Character : MonoBehaviour, IDamageable
         DoMovements(movementForce, doJump);
     }
 
+    void FixedUpdate()
+    {
+        _animator.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+    }
+
     /// <summary>
     /// Perform the movements on the player
     /// </summary>
