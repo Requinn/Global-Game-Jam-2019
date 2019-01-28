@@ -37,7 +37,7 @@ namespace MichaelWolfGames.Examples
                     Destroy(this.gameObject);
                 }
                 else {
-                    StartCoroutine(CoWaitToDisable(0.15f));
+                    StartCoroutine(CoWaitToDisable(0.2f));
                     //gameObject.SetActive(false);
                 }
             }
