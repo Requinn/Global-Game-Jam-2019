@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class MeshSaver : MonoBehaviour
 {
-
+#if UNITY_EDITOR
     [ContextMenu("Save Mesh")]
     public void SaveMesh()
     {
@@ -13,4 +15,5 @@ public class MeshSaver : MonoBehaviour
         AssetDatabase.CreateAsset(GetComponent<MeshFilter>().sharedMesh, "Assets/New Mesh.asset");
         AssetDatabase.SaveAssets();
     }
+#endif
 }
