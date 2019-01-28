@@ -15,6 +15,7 @@ public class ReactorExplosionSequence : SequenceObject
     private SceneLoader _sceneloader;
 
     [Header("Explosions")]
+    [SerializeField]
     private Explosion[] _explosions;
 
     public override IEnumerator DoSequenceAction() {
